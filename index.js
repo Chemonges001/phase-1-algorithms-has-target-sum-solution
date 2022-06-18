@@ -1,20 +1,39 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+  const seenNumbers = new Set(); 
+  for (const number of array) {
+    const complement = target - number;
+
+  
+    if (seenNumbers.has(complement)) return true;
+
+   
+    seenNumbers.add(number);
+  }
+  return false;
 }
 
 /* 
   Write the Big O time complexity of your function here
 */
-
+time complexity O(n)
+space complexity O(n)
 /* 
-  Add your pseudocode here
-*/
+//   Add your pseudocode here
+// */
+Use an empty set to iterate through the numbers in the array in the insertion order
 
+create a complement varibale than when added to a number equals the target
+
+if the numbers in an array contains the complement, then return through
+
+at the end of the loop, if there's no complement, teturn false.
+// You can run `node index.js` to view these console logs
+iterate through the function to find a complement number that adds to the target and return true
 /*
   Add written explanation of your solution here
 */
 
-// You can run `node index.js` to view these console logs
 if (require.main === module) {
   // add your own custom tests in here
   console.log("Expecting: true");
